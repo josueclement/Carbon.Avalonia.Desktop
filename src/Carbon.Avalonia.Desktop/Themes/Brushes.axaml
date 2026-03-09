@@ -1,0 +1,64 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="CarbonBackgroundBrush" Color="{DynamicResource CarbonBackgroundColor}" />
+    <SolidColorBrush x:Key="CarbonSurfaceBrush" Color="{DynamicResource CarbonSurfaceColor}" />
+    <SolidColorBrush x:Key="CarbonSurfaceLowBrush" Color="{DynamicResource CarbonSurfaceLowColor}" />
+    <SolidColorBrush x:Key="CarbonSurfaceHighBrush" Color="{DynamicResource CarbonSurfaceHighColor}" />
+    <SolidColorBrush x:Key="CarbonBorderBrush" Color="{DynamicResource CarbonBorderColor}" />
+    <SolidColorBrush x:Key="CarbonBorderSubtleBrush" Color="{DynamicResource CarbonBorderSubtleColor}" />
+    <SolidColorBrush x:Key="CarbonForegroundBrush" Color="{DynamicResource CarbonForegroundColor}" />
+    <SolidColorBrush x:Key="CarbonForegroundSecondaryBrush" Color="{DynamicResource CarbonForegroundSecondaryColor}" />
+    <SolidColorBrush x:Key="CarbonForegroundTertiaryBrush" Color="{DynamicResource CarbonForegroundTertiaryColor}" />
+    <SolidColorBrush x:Key="CarbonAccentBrush" Color="{DynamicResource CarbonAccentColor}" />
+    <SolidColorBrush x:Key="CarbonAccentHoverBrush" Color="{DynamicResource CarbonAccentHoverColor}" />
+    <SolidColorBrush x:Key="CarbonSelectionBrush" Color="{DynamicResource CarbonSelectionColor}" />
+    <SolidColorBrush x:Key="CarbonHoverBrush" Color="{DynamicResource CarbonHoverColor}" />
+    <SolidColorBrush x:Key="CarbonPressedBrush" Color="{DynamicResource CarbonPressedColor}" />
+    <SolidColorBrush x:Key="CarbonOverlayBrush" Color="{DynamicResource CarbonOverlayColor}" />
+    <SolidColorBrush x:Key="CarbonSuccessBrush" Color="{DynamicResource CarbonSuccessColor}" />
+    <SolidColorBrush x:Key="CarbonWarningBrush" Color="{DynamicResource CarbonWarningColor}" />
+    <SolidColorBrush x:Key="CarbonErrorBrush" Color="{DynamicResource CarbonErrorColor}" />
+    <SolidColorBrush x:Key="CarbonInfoBackgroundBrush" Color="{DynamicResource CarbonInfoBackgroundColor}" />
+    <SolidColorBrush x:Key="CarbonInfoBorderBrush" Color="{DynamicResource CarbonInfoBorderColor}" />
+    <SolidColorBrush x:Key="CarbonSuccessBackgroundBrush" Color="{DynamicResource CarbonSuccessBackgroundColor}" />
+    <SolidColorBrush x:Key="CarbonSuccessBorderBrush" Color="{DynamicResource CarbonSuccessBorderColor}" />
+    <SolidColorBrush x:Key="CarbonWarningBackgroundBrush" Color="{DynamicResource CarbonWarningBackgroundColor}" />
+    <SolidColorBrush x:Key="CarbonWarningBorderBrush" Color="{DynamicResource CarbonWarningBorderColor}" />
+    <SolidColorBrush x:Key="CarbonErrorBackgroundBrush" Color="{DynamicResource CarbonErrorBackgroundColor}" />
+    <SolidColorBrush x:Key="CarbonErrorBorderBrush" Color="{DynamicResource CarbonErrorBorderColor}" />
+    <SolidColorBrush x:Key="CarbonCalendarTodayBrush" Color="{DynamicResource CarbonCalendarTodayColor}" />
+    <SolidColorBrush x:Key="CarbonCalendarSelectedBrush" Color="{DynamicResource CarbonCalendarSelectedColor}" />
+    <SolidColorBrush x:Key="CarbonCalendarOutOfMonthBrush" Color="{DynamicResource CarbonCalendarOutOfMonthColor}" />
+    <SolidColorBrush x:Key="CarbonCalendarAppointmentBrush" Color="{DynamicResource CarbonCalendarAppointmentColor}" />
+    <SolidColorBrush x:Key="CarbonCalendarGridLineBrush" Color="{DynamicResource CarbonCalendarGridLineColor}" />
+    <SolidColorBrush x:Key="CarbonCalendarCurrentTimeBrush" Color="{DynamicResource CarbonCalendarCurrentTimeColor}" />
+
+    <!-- TextBox overrides (FluentTheme resource keys) -->
+    <SolidColorBrush x:Key="TextControlBackground" Color="{DynamicResource CarbonInputBackgroundColor}" />
+    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="{DynamicResource CarbonInputBackgroundHoverColor}" />
+    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="{DynamicResource CarbonInputBackgroundFocusedColor}" />
+    <SolidColorBrush x:Key="TextControlBorderBrush" Color="{DynamicResource CarbonBorderSubtleColor}" />
+    <SolidColorBrush x:Key="TextControlBorderBrushPointerOver" Color="{DynamicResource CarbonBorderSubtleColor}" />
+    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="{DynamicResource CarbonAccentColor}" />
+    <SolidColorBrush x:Key="TextControlForeground" Color="{DynamicResource CarbonForegroundColor}" />
+    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="{DynamicResource CarbonForegroundColor}" />
+    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="{DynamicResource CarbonForegroundColor}" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="{DynamicResource CarbonForegroundTertiaryColor}" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForegroundPointerOver" Color="{DynamicResource CarbonForegroundTertiaryColor}" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForegroundFocused" Color="{DynamicResource CarbonForegroundTertiaryColor}" />
+    <SolidColorBrush x:Key="TextControlSelectionHighlightColor" Color="{DynamicResource CarbonSelectionColor}" />
+
+    <!-- ComboBox overrides (FluentTheme resource keys) -->
+    <SolidColorBrush x:Key="ComboBoxBackground" Color="{DynamicResource CarbonInputBackgroundColor}" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="{DynamicResource CarbonSurfaceHighColor}" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundPressed" Color="{DynamicResource CarbonSurfaceLowColor}" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundDisabled" Color="{DynamicResource CarbonSurfaceLowColor}" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{DynamicResource CarbonBorderSubtleColor}" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="{DynamicResource CarbonBorderSubtleColor}" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrushPressed" Color="{DynamicResource CarbonAccentColor}" />
+    <SolidColorBrush x:Key="ComboBoxForeground" Color="{DynamicResource CarbonForegroundColor}" />
+    <SolidColorBrush x:Key="ComboBoxForegroundPointerOver" Color="{DynamicResource CarbonForegroundColor}" />
+    <SolidColorBrush x:Key="ComboBoxPlaceholderTextForeground" Color="{DynamicResource CarbonForegroundTertiaryColor}" />
+
+</ResourceDictionary>

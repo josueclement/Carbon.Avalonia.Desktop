@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:CarbonAvaloniaDesktopTester.ViewModels"
+             xmlns:d2d="using:Carbon.Avalonia.Desktop.Controls.Displayer2D"
+             x:Class="CarbonAvaloniaDesktopTester.Views.Displayer2DPageView"
+             x:DataType="vm:Displayer2DPageViewModel">
+
+    <Grid RowDefinitions="Auto,*">
+        <TextBlock Grid.Row="0"
+                   Text="Displayer2D"
+                   FontSize="24"
+                   FontWeight="SemiBold"
+                   Margin="24,24,24,12" />
+
+        <d2d:Displayer2D Grid.Row="1"
+                                Margin="24,0,24,24"
+                                DrawingObjects="{Binding Objects}"
+                                DrawingObjectGroups="{Binding Groups}"
+                                UserInteraction="{Binding Interaction}" />
+    </Grid>
+
+</UserControl>

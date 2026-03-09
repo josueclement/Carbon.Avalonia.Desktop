@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:Carbon.Avalonia.Desktop.Controls.Displayer2D">
+
+    <ControlTheme x:Key="{x:Type controls:Displayer2D}"
+                  TargetType="controls:Displayer2D">
+        <Setter Property="Background" Value="{DynamicResource CarbonSurfaceBrush}" />
+        <Setter Property="ClipToBounds" Value="True" />
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}" ClipToBounds="True">
+                    <controls:Displayer2DCanvas x:Name="PART_Canvas"
+                                                HorizontalAlignment="Stretch"
+                                                VerticalAlignment="Stretch" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Carbon.Avalonia.Desktop/Carbon.Avalonia.Desktop.csproj" />
+    <Project Path="src/CarbonAvaloniaDesktopTester/CarbonAvaloniaDesktopTester.csproj" />
+  </Folder>
+</Solution>

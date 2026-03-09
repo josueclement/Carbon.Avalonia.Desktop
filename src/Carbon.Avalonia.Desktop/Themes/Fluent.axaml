@@ -1,0 +1,30 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Colors.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Brushes.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/CalendarSchedule/CalendarSchedule.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Docking/DockPane.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Docking/DockSplitContainer.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Docking/DockTabGroup.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Docking/DockingHost.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Navigation/NavigationView.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Navigation/NavigationItem.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Ribbon/RibbonButton.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Ribbon/Ribbon.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Ribbon/RibbonDropDownButton.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Ribbon/RibbonGroup.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Ribbon/RibbonTab.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Ribbon/RibbonToggleButton.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/ContentDialog.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/InfoBar.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Overlay.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/SettingsCardExpander.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/SettingsCard.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Editors/BaseEditor.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Editors/MultiLineTextEditor.axaml" />
+        <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Controls/Displayer2D/Displayer2D.axaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

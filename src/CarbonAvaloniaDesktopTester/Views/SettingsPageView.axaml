@@ -1,0 +1,136 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:CarbonAvaloniaDesktopTester.ViewModels"
+             xmlns:carbon="using:Carbon.Avalonia.Desktop.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pia="using:PhosphorIconsAvalonia.Markup"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="700"
+             x:Class="CarbonAvaloniaDesktopTester.Views.SettingsPageView"
+             x:DataType="vm:SettingsPageViewModel">
+
+    <ScrollViewer>
+        <StackPanel Margin="24" Spacing="16">
+            <TextBlock Text="Settings"
+                       FontSize="24"
+                       FontWeight="SemiBold" />
+            <TextBlock Text="Manage application preferences and configuration."
+                       Foreground="{DynamicResource CarbonForegroundSecondaryBrush}" />
+
+            <!-- General -->
+            <TextBlock Text="General"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+
+            <carbon:SettingsCard Header="Theme"
+                                 Description="Switch between light and dark mode"
+                                 IconData="{pia:IconGeometry Icon=moon}">
+                <ToggleSwitch IsChecked="{Binding IsDarkTheme, Mode=TwoWay}"
+                              OnContent="Dark"
+                              OffContent="Light" />
+            </carbon:SettingsCard>
+
+            <carbon:SettingsCard Header="Notifications"
+                                 Description="Configure notification preferences"
+                                 IconData="{pia:IconGeometry Icon=bell}">
+                <Button Content="Configure"
+                        Command="{Binding ConfigureNotificationsCommand}" />
+            </carbon:SettingsCard>
+
+            <carbon:SettingsCard Header="Region"
+                                 Description="Select your preferred region"
+                                 IconData="{pia:IconGeometry Icon=globe}">
+                <ComboBox SelectedItem="{Binding SelectedRegion, Mode=TwoWay}"
+                          MinWidth="150">
+                    <ComboBoxItem Content="North America" />
+                    <ComboBoxItem Content="Europe" />
+                    <ComboBoxItem Content="Asia Pacific" />
+                    <ComboBoxItem Content="Latin America" />
+                </ComboBox>
+            </carbon:SettingsCard>
+
+            <carbon:SettingsCard Header="Auto-save"
+                                 Description="Automatically save changes"
+                                 IconData="{pia:IconGeometry Icon=floppy_disk}">
+                <ToggleButton Content="{Binding AutoSaveButtonText}"
+                              IsChecked="{Binding IsAutoSaveEnabled, Mode=TwoWay}"
+                              MinWidth="100" />
+            </carbon:SettingsCard>
+
+            <carbon:SettingsCard Header="Appearance"
+                                        Description="Change theme, colors, and display options"
+                                        IconData="{pia:IconGeometry Icon=palette}"
+                                        Command="{Binding CardClickedCommand}"
+                                        CommandParameter="Appearance" />
+
+            <carbon:SettingsCard Header="Language"
+                                        Description="Set your preferred language and region"
+                                        IconData="{pia:IconGeometry Icon=translate}"
+                                        Command="{Binding CardClickedCommand}"
+                                        CommandParameter="Language" />
+
+            <!-- Security -->
+            <TextBlock Text="Security"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+
+            <carbon:SettingsCard Header="Encryption"
+                                        Description="Configure default encryption algorithms and key sizes"
+                                        IconData="{pia:IconGeometry Icon=lock_key}"
+                                        Command="{Binding CardClickedCommand}"
+                                        CommandParameter="Encryption" />
+
+            <carbon:SettingsCard Header="Key Management"
+                                        Description="Manage stored keys, certificates, and trust settings"
+                                        IconData="{pia:IconGeometry Icon=key}"
+                                        Command="{Binding CardClickedCommand}"
+                                        CommandParameter="Key Management" />
+
+            <!-- About -->
+            <TextBlock Text="About"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+
+            <!-- SettingsCardExpander Examples -->
+            <carbon:SettingsCardExpander Header="About this app"
+                                         Description="View application details"
+                                         IconData="{pia:IconGeometry Icon=info}">
+                <TextBlock Text="Enigma is a desktop application for encryption and key management, built with Avalonia and the Enigma.Cryptography library."
+                           TextWrapping="Wrap"
+                           Foreground="{DynamicResource CarbonForegroundSecondaryBrush}" />
+            </carbon:SettingsCardExpander>
+
+            <carbon:SettingsCardExpander Header="Preferences"
+                                         Description="Configure display and behavior options"
+                                         IconData="{pia:IconGeometry Icon=gear}">
+                <StackPanel Spacing="12">
+                    <TextBox Watermark="Display name" />
+                    <CheckBox Content="Enable notifications" />
+                    <CheckBox Content="Use dark theme" />
+                </StackPanel>
+            </carbon:SettingsCardExpander>
+
+            <carbon:SettingsCardExpander Header="Advanced"
+                                         Description="Additional configuration options">
+                <TextBlock Text="Advanced settings will be available in a future release."
+                           TextWrapping="Wrap"
+                           Foreground="{DynamicResource CarbonForegroundSecondaryBrush}" />
+            </carbon:SettingsCardExpander>
+
+            <carbon:SettingsCard Header="Updates"
+                                        Description="Check for application updates"
+                                        IconData="{pia:IconGeometry Icon=arrow_clockwise}"
+                                        Command="{Binding CardClickedCommand}"
+                                        CommandParameter="Updates" />
+
+            <!-- Feedback -->
+            <TextBlock Text="{Binding LastAction}"
+                       IsVisible="{Binding LastAction, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

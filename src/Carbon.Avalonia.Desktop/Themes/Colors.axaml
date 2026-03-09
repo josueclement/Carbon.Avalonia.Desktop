@@ -1,0 +1,86 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <!-- Dark theme (JetBrains Darcula-inspired) -->
+        <ResourceDictionary x:Key="Dark">
+            <Color x:Key="CarbonBackgroundColor">#1E1F22</Color>
+            <Color x:Key="CarbonSurfaceColor">#2B2D30</Color>
+            <Color x:Key="CarbonSurfaceHighColor">#313335</Color>
+            <Color x:Key="CarbonBorderColor">#393B40</Color>
+            <Color x:Key="CarbonBorderSubtleColor">#43454A</Color>
+            <Color x:Key="CarbonForegroundColor">#BCBEC4</Color>
+            <Color x:Key="CarbonForegroundSecondaryColor">#6F737A</Color>
+            <Color x:Key="CarbonForegroundTertiaryColor">#4E5157</Color>
+            <Color x:Key="CarbonAccentColor">#3574F0</Color>
+            <Color x:Key="CarbonAccentHoverColor">#4A88F7</Color>
+            <Color x:Key="CarbonSelectionColor">#214283</Color>
+            <Color x:Key="CarbonSurfaceLowColor">#252628</Color>
+            <Color x:Key="CarbonInputBackgroundColor">#1F2123</Color>
+            <Color x:Key="CarbonInputBackgroundFocusedColor">#222325</Color>
+            <Color x:Key="CarbonInputBackgroundHoverColor">#242628</Color>
+            <Color x:Key="CarbonHoverColor">#2E3035</Color>
+            <Color x:Key="CarbonPressedColor">#3C3E42</Color>
+            <Color x:Key="CarbonOverlayColor">#80000000</Color>
+            <Color x:Key="CarbonSuccessColor">#59A869</Color>
+            <Color x:Key="CarbonWarningColor">#E8A33D</Color>
+            <Color x:Key="CarbonErrorColor">#F75464</Color>
+            <Color x:Key="CarbonInfoBackgroundColor">#1C2940</Color>
+            <Color x:Key="CarbonInfoBorderColor">#28406A</Color>
+            <Color x:Key="CarbonSuccessBackgroundColor">#1C3028</Color>
+            <Color x:Key="CarbonSuccessBorderColor">#28503A</Color>
+            <Color x:Key="CarbonWarningBackgroundColor">#302718</Color>
+            <Color x:Key="CarbonWarningBorderColor">#504020</Color>
+            <Color x:Key="CarbonErrorBackgroundColor">#301C20</Color>
+            <Color x:Key="CarbonErrorBorderColor">#502830</Color>
+            <Color x:Key="CarbonCalendarTodayColor">#2A3574F0</Color>
+            <Color x:Key="CarbonCalendarSelectedColor">#214283</Color>
+            <Color x:Key="CarbonCalendarOutOfMonthColor">#4E5157</Color>
+            <Color x:Key="CarbonCalendarAppointmentColor">#3574F0</Color>
+            <Color x:Key="CarbonCalendarGridLineColor">#393B40</Color>
+            <Color x:Key="CarbonCalendarCurrentTimeColor">#F75464</Color>
+        </ResourceDictionary>
+
+        <!-- Light theme (JetBrains IntelliJ-inspired) -->
+        <ResourceDictionary x:Key="Light">
+            <Color x:Key="CarbonBackgroundColor">#F7F8FA</Color>
+            <Color x:Key="CarbonSurfaceColor">#EBEDF0</Color>
+            <Color x:Key="CarbonSurfaceHighColor">#DFE1E5</Color>
+            <Color x:Key="CarbonBorderColor">#D1D3D8</Color>
+            <Color x:Key="CarbonBorderSubtleColor">#E0E2E6</Color>
+            <Color x:Key="CarbonForegroundColor">#1E1F22</Color>
+            <Color x:Key="CarbonForegroundSecondaryColor">#6F737A</Color>
+            <Color x:Key="CarbonForegroundTertiaryColor">#A0A3AA</Color>
+            <Color x:Key="CarbonAccentColor">#3574F0</Color>
+            <Color x:Key="CarbonAccentHoverColor">#2D64D4</Color>
+            <Color x:Key="CarbonSelectionColor">#C4D8F8</Color>
+            <Color x:Key="CarbonSurfaceLowColor">#F2F3F5</Color>
+            <Color x:Key="CarbonInputBackgroundColor">#E8EAED</Color>
+            <Color x:Key="CarbonInputBackgroundFocusedColor">#ECEEF1</Color>
+            <Color x:Key="CarbonInputBackgroundHoverColor">#E4E6EA</Color>
+            <Color x:Key="CarbonHoverColor">#E8EAED</Color>
+            <Color x:Key="CarbonPressedColor">#D2D4D8</Color>
+            <Color x:Key="CarbonOverlayColor">#40000000</Color>
+            <Color x:Key="CarbonSuccessColor">#3B8C4B</Color>
+            <Color x:Key="CarbonWarningColor">#C48832</Color>
+            <Color x:Key="CarbonErrorColor">#DB3B3B</Color>
+            <Color x:Key="CarbonInfoBackgroundColor">#DAE6FA</Color>
+            <Color x:Key="CarbonInfoBorderColor">#A0BEF0</Color>
+            <Color x:Key="CarbonSuccessBackgroundColor">#DAEEDA</Color>
+            <Color x:Key="CarbonSuccessBorderColor">#A0D4A0</Color>
+            <Color x:Key="CarbonWarningBackgroundColor">#F4E6D0</Color>
+            <Color x:Key="CarbonWarningBorderColor">#DCC098</Color>
+            <Color x:Key="CarbonErrorBackgroundColor">#F4DADA</Color>
+            <Color x:Key="CarbonErrorBorderColor">#DCA0A0</Color>
+            <Color x:Key="CarbonCalendarTodayColor">#2A3574F0</Color>
+            <Color x:Key="CarbonCalendarSelectedColor">#C4D8F8</Color>
+            <Color x:Key="CarbonCalendarOutOfMonthColor">#A0A3AA</Color>
+            <Color x:Key="CarbonCalendarAppointmentColor">#3574F0</Color>
+            <Color x:Key="CarbonCalendarGridLineColor">#D1D3D8</Color>
+            <Color x:Key="CarbonCalendarCurrentTimeColor">#DB3B3B</Color>
+        </ResourceDictionary>
+
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

@@ -1,0 +1,80 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:CarbonAvaloniaDesktopTester.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="800"
+             x:Class="CarbonAvaloniaDesktopTester.Views.BaseControlsPageView"
+             x:DataType="vm:BaseControlsPageViewModel">
+
+    <ScrollViewer>
+        <StackPanel Margin="24" Spacing="16">
+            <TextBlock Text="Base Controls"
+                       FontSize="24"
+                       FontWeight="SemiBold" />
+            <TextBlock Text="Standard Avalonia controls with Carbon theme overrides."
+                       Foreground="{DynamicResource CarbonForegroundSecondaryBrush}" />
+
+            <!-- TextBox -->
+            <TextBlock Text="TextBox"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+
+            <TextBox Watermark="Default TextBox" />
+            <TextBox Text="TextBox with text" />
+            <TextBox Watermark="Disabled TextBox" IsEnabled="False" />
+
+            <!-- CheckBox -->
+            <TextBlock Text="CheckBox"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+
+            <CheckBox Content="Unchecked" />
+            <CheckBox Content="Checked" IsChecked="True" />
+            <CheckBox Content="Indeterminate" IsChecked="{x:Null}" IsThreeState="True" />
+            <CheckBox Content="Disabled" IsEnabled="False" />
+
+            <!-- RadioButton -->
+            <TextBlock Text="RadioButton"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+
+            <StackPanel Spacing="4">
+                <RadioButton Content="Option A" GroupName="Group1" IsChecked="True" />
+                <RadioButton Content="Option B" GroupName="Group1" />
+                <RadioButton Content="Option C" GroupName="Group1" />
+                <RadioButton Content="Disabled" GroupName="Group2" IsEnabled="False" />
+            </StackPanel>
+
+            <!-- ComboBox -->
+            <TextBlock Text="ComboBox"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+
+            <ComboBox PlaceholderText="Select an item" MinWidth="200">
+                <ComboBoxItem Content="Item 1" />
+                <ComboBoxItem Content="Item 2" />
+                <ComboBoxItem Content="Item 3" />
+            </ComboBox>
+            <ComboBox PlaceholderText="Disabled" IsEnabled="False" MinWidth="200" />
+
+            <!-- ListBox -->
+            <TextBlock Text="ListBox"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0" />
+
+            <ListBox MaxHeight="160" MinWidth="200">
+                <ListBoxItem Content="Item 1" />
+                <ListBoxItem Content="Item 2" />
+                <ListBoxItem Content="Item 3" />
+                <ListBoxItem Content="Item 4" />
+                <ListBoxItem Content="Item 5" />
+            </ListBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

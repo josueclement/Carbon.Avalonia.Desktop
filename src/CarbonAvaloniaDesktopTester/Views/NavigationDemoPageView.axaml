@@ -1,0 +1,136 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:CarbonAvaloniaDesktopTester.ViewModels"
+             xmlns:carbon="using:Carbon.Avalonia.Desktop.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pia="using:PhosphorIconsAvalonia.Markup"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
+             x:Class="CarbonAvaloniaDesktopTester.Views.NavigationDemoPageView"
+             x:DataType="vm:NavigationDemoPageViewModel">
+
+    <ScrollViewer>
+        <StackPanel Margin="24" Spacing="16">
+            <TextBlock Text="Navigation"
+                       FontSize="24"
+                       FontWeight="SemiBold" />
+            <TextBlock Text="Test navigation features including NavigateTo and cancellation with INavigationLifecycleAsync."
+                       Foreground="{DynamicResource CarbonForegroundSecondaryBrush}"
+                       TextWrapping="Wrap" />
+
+            <!-- NavigateTo Section -->
+            <carbon:SettingsCardExpander Header="NavigateTo"
+                                         Description="Test NavigateTo(object page) with existing nav items and arbitrary pages"
+                                         IconData="{pia:IconGeometry Icon=compass}"
+                                         IsExpanded="True">
+                <StackPanel Spacing="12">
+                    <carbon:SettingsCard Header="Navigate to Settings"
+                                                Description="Navigates to SettingsPageViewModel — should select the Settings nav item"
+                                                IconData="{pia:IconGeometry Icon=gear}"
+                                                Command="{Binding NavigateToSettingsCommand}" />
+
+                    <carbon:SettingsCard Header="Navigate to Dummy Page"
+                                                Description="Navigates to DummyPageViewModel — no nav item should be selected"
+                                                IconData="{pia:IconGeometry Icon=question}"
+                                                Command="{Binding NavigateToDummyCommand}" />
+                </StackPanel>
+            </carbon:SettingsCardExpander>
+
+            <!-- Navigation Cancellation Section -->
+            <carbon:SettingsCardExpander Header="Navigation Cancellation"
+                                         Description="Demonstrates INavigationLifecycleAsync with unsaved changes protection"
+                                         IconData="{pia:IconGeometry Icon=file_x}"
+                                         IsExpanded="True">
+                <StackPanel Spacing="16">
+                    <!-- Instructions -->
+                    <Border Background="{DynamicResource CarbonSurfaceBrush}"
+                            BorderBrush="{DynamicResource CarbonBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Padding="12">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Instructions:"
+                                      FontWeight="SemiBold" />
+                            <TextBlock TextWrapping="Wrap"
+                                      Foreground="{DynamicResource CarbonForegroundSecondaryBrush}">
+                                <Run Text="1. Type some text in the editor below" />
+                                <LineBreak />
+                                <Run Text="2. Try to navigate to another page" />
+                                <LineBreak />
+                                <Run Text="3. A confirmation dialog will appear" />
+                                <LineBreak />
+                                <Run Text="4. Click 'Keep Editing' to cancel navigation" />
+                                <LineBreak />
+                                <Run Text="5. Click 'Discard Changes' to allow navigation" />
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Unsaved Changes Indicator -->
+                    <Border Background="{DynamicResource CarbonWarningBrush}"
+                            BorderBrush="{DynamicResource CarbonBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Padding="12"
+                            IsVisible="{Binding HasUnsavedChanges}">
+                        <TextBlock Text="⚠️ You have unsaved changes"
+                                  FontWeight="SemiBold"
+                                  VerticalAlignment="Center" />
+                    </Border>
+
+                    <!-- Document Editor -->
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Document Editor"
+                                  FontWeight="SemiBold" />
+
+                        <TextBox Text="{Binding DocumentText, Mode=TwoWay}"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap"
+                                 MinHeight="120"
+                                 Watermark="Start typing to create unsaved changes..." />
+
+                        <!-- Action Buttons -->
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <Button Content="Save"
+                                    Command="{Binding SaveCommand}"
+                                    IsEnabled="{Binding HasUnsavedChanges}" />
+
+                            <Button Content="Discard"
+                                    Command="{Binding DiscardCommand}"
+                                    IsEnabled="{Binding HasUnsavedChanges}" />
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Technical Info -->
+                    <Border Background="{DynamicResource CarbonSurfaceBrush}"
+                            BorderBrush="{DynamicResource CarbonBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Padding="12">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Technical Details:"
+                                      FontWeight="SemiBold" />
+                            <TextBlock TextWrapping="Wrap"
+                                      Foreground="{DynamicResource CarbonForegroundSecondaryBrush}">
+                                <Run Text="This page implements " />
+                                <Run Text="INavigationLifecycleAsync" FontFamily="Consolas" />
+                                <Run Text=" which allows async operations and navigation cancellation." />
+                                <LineBreak />
+                                <LineBreak />
+                                <Run Text="The " />
+                                <Run Text="OnDisappearingAsync()" FontFamily="Consolas" />
+                                <Run Text=" method returns " />
+                                <Run Text="false" FontFamily="Consolas" />
+                                <Run Text=" to cancel navigation, or " />
+                                <Run Text="true" FontFamily="Consolas" />
+                                <Run Text=" to allow it." />
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </carbon:SettingsCardExpander>
+
+        </StackPanel>
+    </ScrollViewer>
+
+</UserControl>

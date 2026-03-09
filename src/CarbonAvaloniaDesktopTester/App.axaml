@@ -1,0 +1,24 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CarbonAvaloniaDesktopTester.App"
+             xmlns:local="using:CarbonAvaloniaDesktopTester"
+             RequestedThemeVariant="Dark">
+
+    <Application.DataTemplates>
+        <!-- <local:ViewLocator/> -->
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://Carbon.Avalonia.Desktop/Themes/Fluent.axaml" />
+                <!-- Tester-specific control themes -->
+                <ResourceInclude Source="avares://CarbonAvaloniaDesktopTester/Controls/ProgressOverlayCard.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
