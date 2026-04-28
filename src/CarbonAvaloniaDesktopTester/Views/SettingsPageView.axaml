@@ -107,7 +107,7 @@
                                          Description="Configure display and behavior options"
                                          IconData="{pia:IconGeometry Icon=gear}">
                 <StackPanel Spacing="12">
-                    <TextBox Watermark="Display name" />
+                    <TextBox PlaceholderText="Display name" />
                     <CheckBox Content="Enable notifications" />
                     <CheckBox Content="Use dark theme" />
                 </StackPanel>

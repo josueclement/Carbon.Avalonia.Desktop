@@ -121,7 +121,7 @@ public class BaseEditor : TextBox
     /// Called when the control receives keyboard focus. Selects all text if <see cref="SelectAllTextOnFocus"/> is <see langword="true"/>.
     /// </summary>
     /// <param name="e">The focus event arguments.</param>
-    protected override void OnGotFocus(GotFocusEventArgs e)
+    protected override void OnGotFocus(FocusChangedEventArgs e)
     {
         base.OnGotFocus(e);
 

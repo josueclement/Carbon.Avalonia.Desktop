@@ -48,7 +48,7 @@
                                           VerticalScrollBarVisibility="Auto">
                                 <Panel Margin="{TemplateBinding Padding}">
                                     <TextBlock x:Name="PART_Watermark"
-                                               Text="{TemplateBinding Watermark}"
+                                               Text="{TemplateBinding PlaceholderText}"
                                                Foreground="{DynamicResource CarbonForegroundTertiaryBrush}"
                                                IsVisible="False"
                                                VerticalAlignment="Top"

@@ -87,7 +87,7 @@
                                  AcceptsReturn="True"
                                  TextWrapping="Wrap"
                                  MinHeight="120"
-                                 Watermark="Start typing to create unsaved changes..." />
+                                 PlaceholderText="Start typing to create unsaved changes..." />
 
                         <!-- Action Buttons -->
                         <StackPanel Orientation="Horizontal" Spacing="8">
