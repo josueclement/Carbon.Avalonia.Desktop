@@ -15,7 +15,13 @@
       "Bash(dotnet csharp:*)",
       "Bash(dotnet sln:*)",
       "Bash(head:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(dotnet nuget search *)",
+      "Bash(dotnet package *)",
+      "Bash(dotnet add *)",
+      "Bash(dotnet restore *)",
+      "Bash(git checkout *)",
+      "Bash(git *)"
     ]
   }
 }

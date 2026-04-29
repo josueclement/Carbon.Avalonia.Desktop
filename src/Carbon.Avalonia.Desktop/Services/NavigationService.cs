@@ -15,6 +15,9 @@ public class NavigationService : ObservableObject, INavigationService
     /// </summary>
     private readonly SemaphoreSlim _navigationLock = new(1, 1);
 
+    /// <inheritdoc />
+    public event EventHandler<NavigationFailedEventArgs>? NavigationFailed;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="NavigationService"/> class.
     /// Sets up the default <see cref="PageFactory"/> that creates page instances and their ViewModels.
@@ -52,7 +55,9 @@ public class NavigationService : ObservableObject, INavigationService
         {
             var previousItem = field;
             if (SetProperty(ref field, value))
-                _ = TryNavigateToItemAsync(value, previousItem);
+                _ = TryNavigateToItemAsync(value, previousItem).ContinueWith(
+                    t => OnNavigationFailed(t.Exception!.InnerException ?? t.Exception!, "TryNavigateToItemAsync"),
+                    TaskContinuationOptions.OnlyOnFaulted);
         }
     }
 
@@ -152,7 +157,23 @@ public class NavigationService : ObservableObject, INavigationService
                 }
             }
 
-            CurrentPage = targetItem is not null ? PageFactory(targetItem) : null;
+            if (targetItem is not null)
+            {
+                try
+                {
+                    CurrentPage = PageFactory(targetItem);
+                }
+                catch (Exception ex)
+                {
+                    CurrentPage = null;
+                    OnNavigationFailed(ex, "PageFactory");
+                    return;
+                }
+            }
+            else
+            {
+                CurrentPage = null;
+            }
 
             if (CurrentPage is not null)
                 await InvokeAppearingAsync(CurrentPage, null);
@@ -168,7 +189,7 @@ public class NavigationService : ObservableObject, INavigationService
     /// </summary>
     /// <param name="page">The current page Control.</param>
     /// <returns><c>true</c> if navigation is allowed; otherwise, <c>false</c>.</returns>
-    private static async Task<bool> InvokeDisappearingAsync(Control page)
+    private async Task<bool> InvokeDisappearingAsync(Control page)
     {
         try
         {
@@ -176,8 +197,9 @@ public class NavigationService : ObservableObject, INavigationService
                 return await nav.OnDisappearingAsync();
             return true;
         }
-        catch
+        catch (Exception ex)
         {
+            OnNavigationFailed(ex, "OnDisappearingAsync");
             return true;
         }
     }
@@ -187,16 +209,21 @@ public class NavigationService : ObservableObject, INavigationService
     /// </summary>
     /// <param name="page">The current page Control.</param>
     /// <param name="parameter">The parameter passed to the navigation request.</param>
-    private static async Task InvokeAppearingAsync(Control page, object? parameter)
+    private async Task InvokeAppearingAsync(Control page, object? parameter)
     {
         try
         {
             if (page.DataContext is INavigationViewModel nav)
                 await nav.OnAppearingAsync(parameter);
         }
-        catch
+        catch (Exception ex)
         {
-            // ignored
+            OnNavigationFailed(ex, "OnAppearingAsync");
         }
+    }
+
+    private void OnNavigationFailed(Exception exception, string phase)
+    {
+        NavigationFailed?.Invoke(this, new NavigationFailedEventArgs(exception, phase));
     }
 }
