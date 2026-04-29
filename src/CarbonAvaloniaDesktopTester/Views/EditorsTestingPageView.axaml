@@ -25,7 +25,7 @@
                 <StackPanel Spacing="8">
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:ShortEditor Title="Temperature (short, -1000..1000)"
-                                             Watermark="Enter short integer..."
+                                             PlaceholderText="Enter short integer..."
                                              Value="{Binding ShortValue}"
                                              Unit="°C" />
                         <TextBlock Grid.Column="1" Text="{Binding ShortValueInfo}" VerticalAlignment="Center"
@@ -34,7 +34,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:UShortEditor Title="Port (ushort, 1..65535)"
-                                              Watermark="Enter port number..."
+                                              PlaceholderText="Enter port number..."
                                               Value="{Binding UshortValue}"
                                               NullWhenEmpty="True"
                                               Unit="port" />
@@ -44,7 +44,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:IntEditor Title="Size (int, 0..10000)"
-                                           Watermark="Enter integer..."
+                                           PlaceholderText="Enter integer..."
                                            Value="{Binding IntValue}"
                                            Unit="px" />
                         <TextBlock Grid.Column="1" Text="{Binding IntValueInfo}" VerticalAlignment="Center"
@@ -53,7 +53,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:UIntEditor Title="Count (uint, 1..999999)"
-                                            Watermark="Enter unsigned integer..."
+                                            PlaceholderText="Enter unsigned integer..."
                                             Value="{Binding UintValue}"
                                             Unit="items" />
                         <TextBlock Grid.Column="1" Text="{Binding UintValueInfo}" VerticalAlignment="Center"
@@ -62,7 +62,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:LongEditor Title="Timestamp (long, ≥0)"
-                                            Watermark="Enter long integer..."
+                                            PlaceholderText="Enter long integer..."
                                             Value="{Binding LongValue}"
                                             Unit="ticks" />
                         <TextBlock Grid.Column="1" Text="{Binding LongValueInfo}" VerticalAlignment="Center"
@@ -71,7 +71,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:ULongEditor Title="File size (ulong, 1..1048576)"
-                                             Watermark="Enter unsigned integer..."
+                                             PlaceholderText="Enter unsigned integer..."
                                              Value="{Binding UlongValue}"
                                              Unit="bytes" />
                         <TextBlock Grid.Column="1" Text="{Binding UlongValueInfo}" VerticalAlignment="Center"
@@ -88,7 +88,7 @@
                 <StackPanel Spacing="8">
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:SingleEditor Title="Ratio (float, 0..100)"
-                                              Watermark="Enter float..."
+                                              PlaceholderText="Enter float..."
                                               Value="{Binding SingleValue}"
                                               FormatString="N3" />
                         <TextBlock Grid.Column="1" Text="{Binding SingleValueInfo}" VerticalAlignment="Center"
@@ -97,7 +97,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:DoubleEditor Title="Distance (double, 0..99999.99)"
-                                              Watermark="Enter decimal..."
+                                              PlaceholderText="Enter decimal..."
                                               Value="{Binding DoubleValue}"
                                               FormatString="N2"
                                               Unit="mm" />
@@ -107,7 +107,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:DoubleEditor Title="Speed (double, 0..99999.99)"
-                                              Watermark="No constraints"
+                                              PlaceholderText="No constraints"
                                               Value="{Binding DoubleValue}"
                                               Unit="m/s" />
                         <TextBlock Grid.Column="1" Text="{Binding DoubleValueInfo}" VerticalAlignment="Center"
@@ -116,7 +116,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:DecimalEditor Title="Price (decimal, 0.01..99999.99)"
-                                               Watermark="Enter price..."
+                                               PlaceholderText="Enter price..."
                                                Value="{Binding DecimalValue}"
                                                FormatString="N2"
                                                Unit="USD" />
@@ -134,7 +134,7 @@
                 <StackPanel Spacing="8">
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:TextEditor Title="Label (string, required, max 100)"
-                                            Watermark="Enter text..."
+                                            PlaceholderText="Enter text..."
                                             Text="{Binding TextValue}"
                                             Unit="txt" />
                         <TextBlock Grid.Column="1" Text="{Binding TextValueInfo}" VerticalAlignment="Center"
@@ -143,7 +143,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:TextEditor Title="With action (string, required, max 100)"
-                                            Watermark="Type something..."
+                                            PlaceholderText="Type something..."
                                             Text="{Binding TextValue}">
                             <editors:TextEditor.ActionContent>
                                 <Button Content="Go"
@@ -156,14 +156,14 @@
                                    Margin="12,0,0,0" />
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
-                        <editors:TextEditor Watermark="No title" />
+                        <editors:TextEditor PlaceholderText="No title" />
                         <TextBlock Grid.Column="1" Text="{Binding TextValueInfo}" VerticalAlignment="Center"
                                    FontSize="12" Foreground="{DynamicResource CarbonForegroundSecondaryBrush}"
                                    Margin="12,0,0,0" />
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:TextEditor Title="Search (with leading icon)"
-                                            Watermark="Search..."
+                                            PlaceholderText="Search..."
                                             Text="{Binding TextValue}">
                             <editors:TextEditor.LeadingContent>
                                 <PathIcon Data="{pia:IconGeometry Icon=magnifying_glass}" Width="16" Height="16"
@@ -176,7 +176,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:TextEditor Title="Password (with leading icon)"
-                                            Watermark="Enter password..."
+                                            PlaceholderText="Enter password..."
                                             PasswordChar="*">
                             <editors:TextEditor.LeadingContent>
                                 <PathIcon Data="{pia:IconGeometry Icon=lock}" Width="16" Height="16"
@@ -189,7 +189,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:MultiLineTextEditor Title="Notes (string, required, min 5)"
-                                                     Watermark="Enter multi-line text..."
+                                                     PlaceholderText="Enter multi-line text..."
                                                      Text="{Binding MultiLineTextValue}" />
                         <TextBlock Grid.Column="1" Text="{Binding MultiLineTextValueInfo}" VerticalAlignment="Center"
                                    FontSize="12" Foreground="{DynamicResource CarbonForegroundSecondaryBrush}"
@@ -197,7 +197,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:MultiLineTextEditor Title="With action (string, required, min 5)"
-                                                     Watermark="Type something..."
+                                                     PlaceholderText="Type something..."
                                                      Text="{Binding MultiLineTextValue}"
                                                      Unit="md">
                             <editors:MultiLineTextEditor.ActionContent>
@@ -220,7 +220,7 @@
                 <StackPanel Spacing="8">
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:HexadecimalEditor Title="Raw bytes (byte[])"
-                                                   Watermark="Enter hex bytes (e.g. 0A FF 1B)..."
+                                                   PlaceholderText="Enter hex bytes (e.g. 0A FF 1B)..."
                                                    Value="{Binding BytesValue}" />
                         <TextBlock Grid.Column="1" Text="{Binding BytesValueInfo}" VerticalAlignment="Center"
                                    FontSize="12" Foreground="{DynamicResource CarbonForegroundSecondaryBrush}"
@@ -228,7 +228,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <editors:Base64Editor Title="Encoded data (byte[])"
-                                              Watermark="Enter Base64 string..."
+                                              PlaceholderText="Enter Base64 string..."
                                               Value="{Binding BytesValue}" />
                         <TextBlock Grid.Column="1" Text="{Binding BytesValueInfo}" VerticalAlignment="Center"
                                    FontSize="12" Foreground="{DynamicResource CarbonForegroundSecondaryBrush}"

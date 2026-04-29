@@ -21,9 +21,9 @@
                        FontWeight="SemiBold"
                        Margin="0,8,0,0" />
 
-            <TextBox Watermark="Default TextBox" />
+            <TextBox PlaceholderText="Default TextBox" />
             <TextBox Text="TextBox with text" />
-            <TextBox Watermark="Disabled TextBox" IsEnabled="False" />
+            <TextBox PlaceholderText="Disabled TextBox" IsEnabled="False" />
 
             <!-- CheckBox -->
             <TextBlock Text="CheckBox"

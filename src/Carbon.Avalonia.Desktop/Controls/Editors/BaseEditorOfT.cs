@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Data;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 
 namespace Carbon.Avalonia.Desktop.Controls.Editors;
@@ -147,7 +148,7 @@ public abstract class BaseEditor<T> : BaseEditor where T : struct
     /// Called when the editor loses focus. Commits the current text, reformatting the value if parsing succeeds.
     /// </summary>
     /// <param name="e">The routed event arguments.</param>
-    protected override void OnLostFocus(RoutedEventArgs e)
+    protected override void OnLostFocus(FocusChangedEventArgs e)
     {
         base.OnLostFocus(e);
         CommitValue();

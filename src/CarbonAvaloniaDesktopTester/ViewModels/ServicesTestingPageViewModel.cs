@@ -144,7 +144,7 @@ public class ServicesTestingPageViewModel : ObservableObject
         var passwordBox = new TextBox
         {
             PasswordChar = '\u2022',
-            Watermark = "Enter your password",
+            PlaceholderText = "Enter your password",
             Width = 300
         };
 

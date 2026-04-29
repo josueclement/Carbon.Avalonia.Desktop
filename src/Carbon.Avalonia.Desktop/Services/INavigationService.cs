@@ -42,4 +42,10 @@ public interface INavigationService
     /// Takes a <see cref="NavigationItem"/> and returns the corresponding page Control with its DataContext set.
     /// </summary>
     Func<NavigationItem, Control> PageFactory { get; set; }
+
+    /// <summary>
+    /// Raised when an error occurs during navigation. Subscribers can use this
+    /// to log or display navigation failures.
+    /// </summary>
+    event EventHandler<NavigationFailedEventArgs>? NavigationFailed;
 }

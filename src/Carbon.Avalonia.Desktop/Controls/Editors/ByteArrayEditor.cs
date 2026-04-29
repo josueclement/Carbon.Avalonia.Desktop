@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 
 namespace Carbon.Avalonia.Desktop.Controls.Editors;
@@ -118,7 +119,7 @@ public abstract class ByteArrayEditor : MultiLineTextEditor
     /// Called when the editor loses focus. Commits the current text, normalising the encoded representation if decoding succeeds.
     /// </summary>
     /// <param name="e">The routed event arguments.</param>
-    protected override void OnLostFocus(RoutedEventArgs e)
+    protected override void OnLostFocus(FocusChangedEventArgs e)
     {
         base.OnLostFocus(e);
         CommitValue();
