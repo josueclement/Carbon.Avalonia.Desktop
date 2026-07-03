@@ -30,7 +30,7 @@
             </ControlTemplate>
         </Setter>
         <Style Selector="^:horizontal /template/ StackPanel">
-            <Setter Property="MaxWidth" Value="72" />
+            <Setter Property="MaxWidth" Value="{Binding LabelMaxWidth, RelativeSource={RelativeSource TemplatedParent}}" />
         </Style>
     </ControlTheme>
 

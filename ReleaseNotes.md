@@ -2,13 +2,18 @@
 
 ## Unreleased
 
+### Navigation
+
+- `NavigationView` — new `PaneSize` property (default 90) controls the rail's cross-axis extent (its width when vertical, its maximum height when horizontal), replacing the previously hard-coded `90`. Existing rails are unchanged.
+- `NavigationItem` — new `LabelMaxWidth` property (default 72) controls the maximum label width in horizontal orientation, replacing the previously hard-coded `72`.
+
 ### Dialogs & Overlays
 
-- `ContentDialog` — the dialog card is now sizable. New `StyledProperty` members `DialogWidth`, `DialogHeight`, `DialogMinWidth`, `DialogMaxWidth`, `DialogMinHeight`, and `DialogMaxHeight` are template-bound to the card, replacing the previously hard-coded `MinWidth="320"` / `MaxWidth="600"`. Defaults are unchanged (320/600 width, auto/unbounded height), so existing dialogs render identically; raise `DialogMaxWidth` for wide content. The content region is now wrapped in a `ScrollViewer`, so setting `DialogMaxHeight` makes tall content scroll within the card while the title and buttons stay fixed.
+- `ContentDialog` — the dialog card is now sizable. New `StyledProperty` members `DialogWidth`, `DialogHeight`, `DialogMinWidth`, `DialogMaxWidth`, `DialogMinHeight`, and `DialogMaxHeight` are template-bound to the card, replacing the previously hard-coded `MinWidth="320"` / `MaxWidth="600"`. Width defaults are unchanged (320/600), so existing dialogs keep their current width; raise `DialogMaxWidth` for wide content. The content region is now wrapped in a `ScrollViewer`: content taller than the available height — or than an explicitly set `DialogMaxHeight` — scrolls within the card while the title and buttons stay fixed, instead of overflowing the window.
 
 ## 0.1.0 — 2026-02-26
 
-Initial public release of **Cobalt.Avalonia.Desktop**, a reusable Avalonia UI control library for .NET desktop applications.
+Initial public release of **Carbon.Avalonia.Desktop**, a reusable Avalonia UI control library for .NET desktop applications.
 
 ---
 
@@ -75,7 +80,7 @@ A lightweight data pipeline for `IEnumerable` + `INotifyCollectionChanged` sourc
 
 - Fluent theme integration (Dark and Light variants).
 - `Colors.axaml` — Semantic color tokens via `ResourceDictionary.ThemeDictionaries`.
-- `Brushes.axaml` — Named brushes (`CobaltBackground*`, `CobaltSurface*`, `CobaltBorder*`, `CobaltForeground*`, `CobaltAccent*`, `CobaltSuccess`, `CobaltWarning`, `CobaltError`) using `DynamicResource` for runtime theme switching.
+- `Brushes.axaml` — Named brushes (`CarbonBackground*`, `CarbonSurface*`, `CarbonBorder*`, `CarbonForeground*`, `CarbonAccent*`, `CarbonSuccess`, `CarbonWarning`, `CarbonError`) using `DynamicResource` for runtime theme switching.
 
 ---
 

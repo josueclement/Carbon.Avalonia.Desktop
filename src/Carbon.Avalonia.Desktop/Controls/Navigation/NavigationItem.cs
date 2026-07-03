@@ -34,6 +34,12 @@ public class NavigationItem : TemplatedControl
         AvaloniaProperty.Register<NavigationItem, Type>(nameof(PageViewModelType));
 
     /// <summary>
+    /// Defines the <see cref="LabelMaxWidth"/> property.
+    /// </summary>
+    public static readonly StyledProperty<double> LabelMaxWidthProperty =
+        AvaloniaProperty.Register<NavigationItem, double>(nameof(LabelMaxWidth), 72d);
+
+    /// <summary>
     /// Gets or sets the header text for the navigation item.
     /// </summary>
     public string? Header
@@ -67,5 +73,14 @@ public class NavigationItem : TemplatedControl
     {
         get => GetValue(PageViewModelTypeProperty);
         set => SetValue(PageViewModelTypeProperty, value);
+    }
+
+    /// <summary>
+    /// Gets or sets the maximum width of the item's label in horizontal orientation. Defaults to 72.
+    /// </summary>
+    public double LabelMaxWidth
+    {
+        get => GetValue(LabelMaxWidthProperty);
+        set => SetValue(LabelMaxWidthProperty, value);
     }
 }
