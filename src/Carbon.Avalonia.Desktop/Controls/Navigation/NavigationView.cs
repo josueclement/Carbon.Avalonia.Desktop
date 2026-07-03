@@ -43,6 +43,12 @@ public class NavigationView : TemplatedControl
         AvaloniaProperty.Register<NavigationView, NavigationOrientation>(nameof(Orientation), NavigationOrientation.Vertical);
 
     /// <summary>
+    /// Defines the <see cref="PaneSize"/> property.
+    /// </summary>
+    public static readonly StyledProperty<double> PaneSizeProperty =
+        AvaloniaProperty.Register<NavigationView, double>(nameof(PaneSize), 90d);
+
+    /// <summary>
     /// The <see cref="ListBox"/> used for main navigation items.
     /// </summary>
     private ListBox? _itemsListBox;
@@ -100,6 +106,16 @@ public class NavigationView : TemplatedControl
     {
         get => GetValue(OrientationProperty);
         set => SetValue(OrientationProperty, value);
+    }
+
+    /// <summary>
+    /// Gets or sets the cross-axis extent of the navigation rail — its width when
+    /// <see cref="Orientation"/> is vertical, and its maximum height when horizontal. Defaults to 90.
+    /// </summary>
+    public double PaneSize
+    {
+        get => GetValue(PaneSizeProperty);
+        set => SetValue(PaneSizeProperty, value);
     }
 
     /// <summary>

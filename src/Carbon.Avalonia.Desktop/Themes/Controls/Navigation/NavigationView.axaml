@@ -9,7 +9,7 @@
                        Background="{DynamicResource CarbonSurfaceBrush}"
                        BorderBrush="{DynamicResource CarbonBorderSubtleBrush}"
                        BorderThickness="0,0,1,0"
-                       Width="90">
+                       Width="{TemplateBinding PaneSize}">
                     <DockPanel>
                         <ContentPresenter x:Name="PART_Logo"
                                           Content="{TemplateBinding Logo}"
@@ -77,7 +77,7 @@
         <Style Selector="^:horizontal /template/ Border#PART_Border">
             <Setter Property="BorderThickness" Value="0,1,0,0" />
             <Setter Property="Width" Value="NaN" />
-            <Setter Property="MaxHeight" Value="90" />
+            <Setter Property="MaxHeight" Value="{Binding PaneSize, RelativeSource={RelativeSource TemplatedParent}}" />
         </Style>
 
         <!-- Horizontal orientation: logo docks left -->
