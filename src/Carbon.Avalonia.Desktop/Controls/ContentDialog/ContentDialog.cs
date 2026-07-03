@@ -83,6 +83,30 @@ public class ContentDialog : ContentControl
     public static readonly StyledProperty<IBrush?> IconBrushProperty =
         AvaloniaProperty.Register<ContentDialog, IBrush?>(nameof(IconBrush));
 
+    /// <summary>Defines the <see cref="DialogWidth"/> property.</summary>
+    public static readonly StyledProperty<double> DialogWidthProperty =
+        AvaloniaProperty.Register<ContentDialog, double>(nameof(DialogWidth), double.NaN);
+
+    /// <summary>Defines the <see cref="DialogHeight"/> property.</summary>
+    public static readonly StyledProperty<double> DialogHeightProperty =
+        AvaloniaProperty.Register<ContentDialog, double>(nameof(DialogHeight), double.NaN);
+
+    /// <summary>Defines the <see cref="DialogMinWidth"/> property.</summary>
+    public static readonly StyledProperty<double> DialogMinWidthProperty =
+        AvaloniaProperty.Register<ContentDialog, double>(nameof(DialogMinWidth), 320);
+
+    /// <summary>Defines the <see cref="DialogMaxWidth"/> property.</summary>
+    public static readonly StyledProperty<double> DialogMaxWidthProperty =
+        AvaloniaProperty.Register<ContentDialog, double>(nameof(DialogMaxWidth), 600);
+
+    /// <summary>Defines the <see cref="DialogMinHeight"/> property.</summary>
+    public static readonly StyledProperty<double> DialogMinHeightProperty =
+        AvaloniaProperty.Register<ContentDialog, double>(nameof(DialogMinHeight), 0);
+
+    /// <summary>Defines the <see cref="DialogMaxHeight"/> property.</summary>
+    public static readonly StyledProperty<double> DialogMaxHeightProperty =
+        AvaloniaProperty.Register<ContentDialog, double>(nameof(DialogMaxHeight), double.PositiveInfinity);
+
     /// <summary>Gets or sets the dialog title.</summary>
     public string? Title
     {
@@ -193,6 +217,48 @@ public class ContentDialog : ContentControl
     {
         get => GetValue(IconBrushProperty);
         set => SetValue(IconBrushProperty, value);
+    }
+
+    /// <summary>Gets or sets an explicit width for the dialog card. Defaults to <see cref="double.NaN"/> (auto-size to content, bounded by <see cref="DialogMinWidth"/>/<see cref="DialogMaxWidth"/>).</summary>
+    public double DialogWidth
+    {
+        get => GetValue(DialogWidthProperty);
+        set => SetValue(DialogWidthProperty, value);
+    }
+
+    /// <summary>Gets or sets an explicit height for the dialog card. Defaults to <see cref="double.NaN"/> (auto-size to content, bounded by <see cref="DialogMinHeight"/>/<see cref="DialogMaxHeight"/>).</summary>
+    public double DialogHeight
+    {
+        get => GetValue(DialogHeightProperty);
+        set => SetValue(DialogHeightProperty, value);
+    }
+
+    /// <summary>Gets or sets the minimum width of the dialog card. Defaults to 320.</summary>
+    public double DialogMinWidth
+    {
+        get => GetValue(DialogMinWidthProperty);
+        set => SetValue(DialogMinWidthProperty, value);
+    }
+
+    /// <summary>Gets or sets the maximum width of the dialog card. Defaults to 600; raise it to allow wider content.</summary>
+    public double DialogMaxWidth
+    {
+        get => GetValue(DialogMaxWidthProperty);
+        set => SetValue(DialogMaxWidthProperty, value);
+    }
+
+    /// <summary>Gets or sets the minimum height of the dialog card. Defaults to 0.</summary>
+    public double DialogMinHeight
+    {
+        get => GetValue(DialogMinHeightProperty);
+        set => SetValue(DialogMinHeightProperty, value);
+    }
+
+    /// <summary>Gets or sets the maximum height of the dialog card. Defaults to unbounded; set it to make tall content scroll within the card.</summary>
+    public double DialogMaxHeight
+    {
+        get => GetValue(DialogMaxHeightProperty);
+        set => SetValue(DialogMaxHeightProperty, value);
     }
 
     /// <summary>Raised when the dialog is closed, with the <see cref="DialogResult"/> indicating which button was pressed.</summary>

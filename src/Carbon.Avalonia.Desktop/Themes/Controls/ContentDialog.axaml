@@ -21,8 +21,12 @@
                            BorderBrush="{DynamicResource CarbonBorderBrush}"
                            BorderThickness="1"
                            CornerRadius="8"
-                           MinWidth="320"
-                           MaxWidth="600"
+                           Width="{TemplateBinding DialogWidth}"
+                           Height="{TemplateBinding DialogHeight}"
+                           MinWidth="{TemplateBinding DialogMinWidth}"
+                           MaxWidth="{TemplateBinding DialogMaxWidth}"
+                           MinHeight="{TemplateBinding DialogMinHeight}"
+                           MaxHeight="{TemplateBinding DialogMaxHeight}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            BoxShadow="0 12 48 0 #99000000">
@@ -36,24 +40,29 @@
                                      IsVisible="{TemplateBinding Title, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
 
                             <!-- Icon and Content -->
-                            <Grid Grid.Row="1" ColumnDefinitions="Auto,*" Margin="0,0,0,24">
-                                <!-- Icon -->
-                                <Viewbox Grid.Column="0"
-                                        Width="48"
-                                        Height="48"
-                                        VerticalAlignment="Top"
-                                        Margin="0,0,16,0"
-                                        IsVisible="{TemplateBinding IconData, Converter={x:Static ObjectConverters.IsNotNull}}">
-                                    <Path Data="{TemplateBinding IconData}"
-                                         Fill="{TemplateBinding IconBrush}"
-                                         Stretch="Uniform" />
-                                </Viewbox>
+                            <ScrollViewer Grid.Row="1"
+                                        Margin="0,0,0,24"
+                                        HorizontalScrollBarVisibility="Disabled"
+                                        VerticalScrollBarVisibility="Auto">
+                                <Grid ColumnDefinitions="Auto,*">
+                                    <!-- Icon -->
+                                    <Viewbox Grid.Column="0"
+                                            Width="48"
+                                            Height="48"
+                                            VerticalAlignment="Top"
+                                            Margin="0,0,16,0"
+                                            IsVisible="{TemplateBinding IconData, Converter={x:Static ObjectConverters.IsNotNull}}">
+                                        <Path Data="{TemplateBinding IconData}"
+                                             Fill="{TemplateBinding IconBrush}"
+                                             Stretch="Uniform" />
+                                    </Viewbox>
 
-                                <!-- Content -->
-                                <ContentPresenter Grid.Column="1"
-                                                Content="{TemplateBinding Content}"
-                                                ContentTemplate="{TemplateBinding ContentTemplate}" />
-                            </Grid>
+                                    <!-- Content -->
+                                    <ContentPresenter Grid.Column="1"
+                                                    Content="{TemplateBinding Content}"
+                                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                </Grid>
+                            </ScrollViewer>
 
                             <!-- Buttons -->
                             <StackPanel Grid.Row="2"
