@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Layout;
 using Avalonia.Media;
 using Carbon.Avalonia.Desktop.Controls;
 using Carbon.Avalonia.Desktop.Controls.ContentDialog;
@@ -32,6 +34,8 @@ public class ServicesTestingPageViewModel : ObservableObject
         ShowSimpleDialogCommand = new AsyncRelayCommand(ShowSimpleDialog);
         ShowComplexDialogCommand = new AsyncRelayCommand(ShowComplexDialog);
         ShowPasswordDialogCommand = new AsyncRelayCommand(ShowPasswordDialog);
+        ShowWideDialogCommand = new AsyncRelayCommand(ShowWideDialog);
+        ShowTallDialogCommand = new AsyncRelayCommand(ShowTallDialog);
 
         // Overlay commands
         RunSimpleTaskCommand = new AsyncRelayCommand(RunSimpleTask, CanRunTask);
@@ -78,6 +82,8 @@ public class ServicesTestingPageViewModel : ObservableObject
     public IAsyncRelayCommand ShowSimpleDialogCommand { get; }
     public IAsyncRelayCommand ShowComplexDialogCommand { get; }
     public IAsyncRelayCommand ShowPasswordDialogCommand { get; }
+    public IAsyncRelayCommand ShowWideDialogCommand { get; }
+    public IAsyncRelayCommand ShowTallDialogCommand { get; }
 
     // Overlay commands
     public IAsyncRelayCommand RunSimpleTaskCommand { get; }
@@ -171,6 +177,71 @@ public class ServicesTestingPageViewModel : ObservableObject
         LastDialogResult = result == DialogResult.Primary
             ? $"Password entered: {passwordBox.Text}"
             : "Password dialog cancelled.";
+    }
+
+    private async Task ShowWideDialog()
+    {
+        // Content that naturally wants more than the default 600px cap.
+        var columns = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 12 };
+        for (int i = 1; i <= 4; i++)
+        {
+            columns.Children.Add(new Border
+            {
+                Width = 190,
+                Padding = new Thickness(12),
+                CornerRadius = new CornerRadius(6),
+                Background = new SolidColorBrush(Color.Parse("#22808080")),
+                Child = new StackPanel
+                {
+                    Spacing = 4,
+                    Children =
+                    {
+                        new TextBlock { Text = $"Column {i}", FontWeight = FontWeight.SemiBold },
+                        new TextBlock
+                        {
+                            Text = "This dialog sets DialogMaxWidth to 900 so wide content is no longer clamped at 600px.",
+                            TextWrapping = TextWrapping.Wrap
+                        }
+                    }
+                }
+            });
+        }
+
+        var result = await _dialogService.ShowAsync(dialog =>
+        {
+            dialog.Title = "Wide Dialog";
+            dialog.DialogMaxWidth = 900;
+            dialog.Content = columns;
+            dialog.PrimaryButtonText = "OK";
+            dialog.CloseButtonText = "Cancel";
+        });
+
+        LastDialogResult = $"Wide dialog result: {result}";
+    }
+
+    private async Task ShowTallDialog()
+    {
+        // Content taller than the capped height, to demonstrate in-card scrolling.
+        var lines = new StackPanel { Spacing = 6 };
+        for (int i = 1; i <= 30; i++)
+        {
+            lines.Children.Add(new TextBlock
+            {
+                Text = $"Line {i} — tall content scrolls within the card while the title and buttons stay fixed.",
+                TextWrapping = TextWrapping.Wrap
+            });
+        }
+
+        var result = await _dialogService.ShowAsync(dialog =>
+        {
+            dialog.Title = "Tall Dialog";
+            dialog.DialogMaxHeight = 400;
+            dialog.Content = lines;
+            dialog.PrimaryButtonText = "OK";
+            dialog.CloseButtonText = "Cancel";
+        });
+
+        LastDialogResult = $"Tall dialog result: {result}";
     }
 
     // Overlay methods

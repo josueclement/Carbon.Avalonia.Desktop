@@ -1,5 +1,11 @@
 # Release Notes
 
+## Unreleased
+
+### Dialogs & Overlays
+
+- `ContentDialog` — the dialog card is now sizable. New `StyledProperty` members `DialogWidth`, `DialogHeight`, `DialogMinWidth`, `DialogMaxWidth`, `DialogMinHeight`, and `DialogMaxHeight` are template-bound to the card, replacing the previously hard-coded `MinWidth="320"` / `MaxWidth="600"`. Defaults are unchanged (320/600 width, auto/unbounded height), so existing dialogs render identically; raise `DialogMaxWidth` for wide content. The content region is now wrapped in a `ScrollViewer`, so setting `DialogMaxHeight` makes tall content scroll within the card while the title and buttons stay fixed.
+
 ## 0.1.0 — 2026-02-26
 
 Initial public release of **Cobalt.Avalonia.Desktop**, a reusable Avalonia UI control library for .NET desktop applications.
